@@ -1,0 +1,26 @@
+ALGORITHM readSentence
+
+VAR countA, countB, countC := INTEGER;
+    sentence:= STRING;
+
+BEGIN
+    countA:=0;
+    countB:=1;
+    countC:=0
+    write("type the sentence")
+    read(sentence)
+
+    REPEAT
+        IF (sentence[countA]="") THEN
+            countB:=countB+1;
+        END_IF
+       IF (sentence[countA] in ["a","e","i","o","u"]) THEN       
+       countC:= countC + 1;
+        END_IF
+        countA :=countA + 1;
+        UNTIL (sentence[countA]=".") 
+
+        write("The number of character is",countA + 1)
+        write("The number of words is",countB)
+        write("The vowel number is ", countC)
+END 
